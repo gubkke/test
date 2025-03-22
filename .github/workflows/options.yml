@@ -7,8 +7,8 @@ on:
         description: 'Select multiple options (comma-separated)'
         required: true
         default: >
-          'option1:branch1,'\n
-          'option2:branch2'
+          option1:branch1,
+          option2:branch2
 
 jobs:
   display-selections:
