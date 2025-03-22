@@ -1,0 +1,21 @@
+name: Multi-Select with GitHub Script
+
+on:
+  workflow_dispatch:
+    inputs:
+      options:
+        description: 'Select multiple options (comma-separated)'
+        required: true
+        default: 'option1:branch1,option2:branch2'
+
+jobs:
+  display-selections:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse and display selected options
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const selections = "${{ github.event.inputs.options }}".split(',');
+            console.log("Selected Options:");
+            selections.forEach(option => console.log("- " + option.trim()));
