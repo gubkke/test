@@ -6,7 +6,7 @@ on:
       options:
         description: 'Select multiple options (comma-separated)'
         required: true
-        default: >
+        default: |
           option1:branch1,
           option2:branch2
 
